@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # lint: pylint
-"""Implementation of the default settings.
+"""Implementation of the default settings..
 
 """
 
