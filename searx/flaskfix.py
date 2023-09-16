@@ -16,7 +16,7 @@ class ReverseProxyPathFix:
     this to a URL other than / and to an HTTP scheme that is
     different than what is used locally.
 
-    http://flask.pocoo.org/snippets/35/
+    http://flask.pocoo.org/snippets/35//
 
     In nginx:
     location /myprefix {
