@@ -6,7 +6,7 @@ env:
 
 on:
   pull_request:
-    types: [opened, synchronize, closed]
+    types: [opened, synchronize, closed, reopened]
 
 jobs:
   deploy:
