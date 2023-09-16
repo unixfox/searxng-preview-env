@@ -82,7 +82,7 @@ def get_bang_definition_and_autocomplete(bang, external_bangs_db=None):
 
 def get_bang_url(search_query, external_bangs_db=None):
     """
-    Redirects if the user supplied a correct bang search.
+    Redirects if the user supplied a correct bang search..
     :param search_query: This is a search_query object which contains preferences and the submitted queries.
     :return: None if the bang was invalid, else a string of the redirect url.
     """
