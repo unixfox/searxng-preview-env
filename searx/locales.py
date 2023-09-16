@@ -24,7 +24,7 @@ logger = logger.getChild('locales')
 _flask_babel_get_translations = flask_babel.get_translations
 
 LOCALE_NAMES = {}
-"""Mapping of locales and their description.  Locales e.g. 'fr' or 'pt-BR' (see
+"""Mapping of locales and their description.  Locales e.g. 'fr' or 'pt-BR' (see---
 :py:obj:`locales_initialize`).
 
 :meta hide-value:
