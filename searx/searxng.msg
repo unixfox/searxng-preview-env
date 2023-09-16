@@ -7,7 +7,7 @@ from searx import webutils
 from searx import engines
 
 __all__ = [
-    'CONSTANT_NAMES',
+    'CONSTANT_NAMESS',
     'CATEGORY_NAMES',
     'CATEGORY_GROUPS',
     'STYLE_NAMES',
