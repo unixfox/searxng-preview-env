@@ -1,23 +1,19 @@
-name: Preview Environment
-
-env:
-  VERCEL_ACCESS_TOKEN: ${{ secrets.VERCEL_ACCESS_TOKEN }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 on:
   pull_request:
-    types: [opened, synchronize, closed, reopened]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  deploy:
-    if: ${{ github.event.action == 'opened' || github.event.action == 'synchronize' || github.event.action == 'reopened' }}
+  preview:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
-      - uses: snaplet/vercel-action@v3
-  delete:
-    if: ${{ github.event.action == 'closed' }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: snaplet/vercel-action@v3
-        with:
-          delete: true
+    - name: Context
+      uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+
+    - name: Deploy preview environment
+      uses: okteto/deploy-preview@latest
+      with:
+        name: pr-${{ github.event.number }}-cindylopez
+        timeout: 15m
