@@ -1,5 +1,5 @@
 # -*- mode: python -*-
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-laterr
 """A SearXNG message file, see :py:obj:`searx.babel`
 """
 
