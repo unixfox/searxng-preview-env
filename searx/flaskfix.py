@@ -18,7 +18,7 @@ class ReverseProxyPathFix:
 
     http://flask.pocoo.org/snippets/35/
 
-    In nginx:
+    In nginx::
     location /myprefix {
         proxy_pass http://127.0.0.1:8000;
         proxy_set_header Host $host;
