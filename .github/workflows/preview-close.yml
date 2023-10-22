@@ -7,12 +7,16 @@ jobs:
   closed:
     runs-on: ubuntu-latest
     steps:
-    - name: Context
-      uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
+      - name: Helm Installation
+        uses: azure/setup-helm@v3
 
-    - name: Destroy preview environment
-      uses: okteto/destroy-preview@latest
-      with:
-        name: pr-${{ github.event.number }}-unixfox
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: deploy to test k8s cluster
+        run: |
+          mkdir -p ~/.kube
+          echo "$KUBECONFIG" > ~/.kube/config
+          chmod 600 ~/.kube/config
+          helm uninstall -n pr-${{ github.event.number }} searxng
+          kubectl delete namespace pr-${{ github.event.number }}
